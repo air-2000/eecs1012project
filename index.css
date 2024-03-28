@@ -32,3 +32,19 @@ body{
     margin: 5px;
     padding: 5px;
 }
+
+.genrebuttons{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+.genrebuttons button{
+    background-color: white;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
