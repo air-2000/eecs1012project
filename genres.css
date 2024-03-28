@@ -9,7 +9,6 @@
     margin: 10px; 
     margin:auto;
     margin-top: 10%;
-    border: 2px solid black;
    
   }
 
@@ -28,6 +27,6 @@
 
 .top p{
     position: relative;
-    font-style: oblique;
+    font-family:'Times New Roman', Times, serif;
     bottom: 10px;;
 }
