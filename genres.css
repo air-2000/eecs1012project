@@ -23,7 +23,18 @@
     height: 100px;
     margin:auto;
     border: 5px solid #555;
+    transition: width 1s, height 1s;
 }
+
+.top:hover {
+    text-align: center;
+    font-size: 40px;
+    width: 905px;
+    height: 105px;
+    margin:auto;
+    border: 5px solid #555;
+}
+
 
 .top p{
     position: relative;
