@@ -8,7 +8,7 @@
     height: 550px; 
     margin: 10px; 
     margin:auto;
-    margin-top: 10%;
+    margin-top: 5%;
    
   }
 
@@ -34,6 +34,7 @@
 
 .poster img {
     border: 5px solid #383838;
+    transition: width 1s, height 1s;
 }
 
 body {
@@ -45,5 +46,17 @@ body {
 
     width: 100px;
     height: 100px;
+    transition: width 1s, height 1s;
+}
 
+.logo:hover{
+   
+    width: 120px;
+    height: 120px;
+
+}
+
+.poster img:hover{
+    width: 320px; 
+    height: 570px; 
 }

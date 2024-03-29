@@ -55,5 +55,12 @@ body{
 
     width: 100px;
     height: 100px;
+    transition: width 1s, height 1s;
+}
+
+.logo:hover{
+   
+    width: 120px;
+    height: 120px;
 
 }
