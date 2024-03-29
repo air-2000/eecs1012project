@@ -24,7 +24,7 @@
     height: 100px;
     margin:auto;
     border: 5px solid #555;
-    transition: width 1s, height 1s;
+    transition: width 1s, height 1s, letter-spacing 1s;
 }
 
 .top:hover {
