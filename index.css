@@ -34,6 +34,30 @@ body{
     text-align: center;
     margin: 5px;
     padding: 5px;
+    align-items:center;
+}
+
+.navbutton button:hover{
+    background-color: white;
+    border: 1px solid blue;
+    color:blue;
+    transition: .2s;
+    transform: scale(1.10);
+}
+
+.navbutton button:active{
+    background-color: lightblue;
+    border: 1px solid blue;
+    color:blue;
+    transform: scale(1);
+}
+
+.navbutton .leftbutton{
+    float:left;
+}
+
+.navbutton .rightbutton{
+    float:right;
 }
 
 .genres {
@@ -46,7 +70,7 @@ body{
     border: 1px solid black;
     border-radius: 20px;
     margin: 5px;
-    padding: 5px; 
+    padding: 5px;
 }
 
 .genrebuttons a {
