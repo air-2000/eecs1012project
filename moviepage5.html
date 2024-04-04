@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Movie Genres</title>
-        <link href="genres.css" type="text/css" rel="stylesheet">
+        <link href="moviepage.css" type="text/css" rel="stylesheet">
         <link rel="icon" href="images/faviconcharlie.ico" type="image/x-icon"/>
-        <script src="genres.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+        <script src="moviepage.js" defer></script>
     </head>
     <body>
         <button type="submit">
@@ -30,24 +31,36 @@
         </div>
     </div>
     
-        <div class="top"> <p> Thriller </p></div>
+        <div class="top"> <p> Movie Name </p></div>
 
         <div class="centerbox">
             <div class="box">
 
-                <div class="poster" onclick="location.href='moviepage.html'" >
+                <div class="poster">
                     <div>
                         <img class="poster" src="https://m.media-amazon.com/images/M/MV5BYzc5MTU4N2EtYTkyMi00NjdhLTg3NWEtMTY4OTEyMzJhZTAzXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_FMjpg_UX1000_.jpg" alt="poster1">
                     </div>
                 </div>
-                
-                <div class="poster" onclick="location.href='moviepage2.html'" >
-                    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="poster2">
+
+                <div>
+                    <iframe width="500" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                    </iframe>
                 </div>
 
-                <div class="poster" onclick="location.href='moviepage3.html'">
-                    <img class="poster" src="https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_FMjpg_UX1000_.jpg" alt="poster3">
+                <div class="summary">
+                    <p> Summary for movie</p>
                 </div>
+                <div class="rating-box">
+                    <header>What Did You Think of the Movie?</header>
+                    <div class="stars">
+                      <i class="fa-solid fa-star" onclick="updateRate(1)"></i>
+                      <i class="fa-solid fa-star" onclick="updateRate(2)"></i>
+                      <i class="fa-solid fa-star" onclick="updateRate(3)"></i>
+                      <i class="fa-solid fa-star" onclick="updateRate(4)"></i>
+                      <i class="fa-solid fa-star" onclick="updateRate(5)"></i>
+                    </div>
+                </div>
+                <div><p class="rating" id="averageRateDisplay">Lorem ipsum dolor</p></div>
 
             </div>
         </div>
