@@ -183,3 +183,7 @@ a:hover{
     justify-content: center;
     
 }
+
+.activeposter{
+    background-color: #000;
+}
