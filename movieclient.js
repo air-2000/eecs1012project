@@ -1,5 +1,5 @@
-   const stars = document.querySelectorAll(".stars i");
-    const submitBtn = document.getElementById('submitBtn');
+const stars = document.querySelectorAll(".stars i");
+const submitBtn = document.getElementById('submitBtn');
 
 
     // Loop through the "stars" NodeList
@@ -28,9 +28,16 @@
         const selectedStar = document.querySelector('.fa-star.active');
         if (selectedStar) {
             const selectedRating = selectedStar.dataset.rating;
-            // Here you can send the selectedRating to your backend or perform any action
+    
             console.log('Selected Rating:', selectedRating);
-            fetch('')
+            // Send the rating to the server using fetch
+            fetch('/rate-movie', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ rating: selectedRating }) // Send the selectedRating in the request body
+            })
         } else {
             console.log('Please select a rating before submitting.');
         }

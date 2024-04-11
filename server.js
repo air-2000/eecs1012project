@@ -74,3 +74,12 @@ app.get('/single-charlie', (req,res) => {
             console.log(err);
         })
 })
+
+app.post('/rate-movie', (req,res) => {
+
+    //Parse the rating to anumber
+    const parsedRating = parseInt(rating);
+
+    totalRating += parsedRating;
+
+})
