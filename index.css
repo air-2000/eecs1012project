@@ -164,7 +164,6 @@ a:hover{
     padding: 3px;
     width: 100%;
     height: 100%;
-    position: relative;
 }
 
 .poster:hover{
@@ -176,7 +175,6 @@ a:hover{
 
 .posters{
     display:inline-flex;
-    position: relative;
 }
 
 .posterflex{
@@ -186,6 +184,6 @@ a:hover{
     
 }
 
-.poster .activeposter{
+.activeposter{
     background-color: #000;
 }
