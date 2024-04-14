@@ -1,85 +1,54 @@
 const express = require('express'); //we must have express installed!
-const mongoose = require('mongoose');
-const charlieModel = require('./models/charlie')
 const app = express();
-
 var port = 8080; //the port we will be running our server on
 
-//Connect to MongoDB
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const charlie = require('./models/charlie');
-const uri = "mongodb+srv://Charlie:qVJpXlJyOqvPlTI6@cluster0.wkjtfd8.mongodb.net/charliemovies?retryWrites=true&w=majority&appName=Cluster0";
-
-mongoose.connect(uri)
-    .then((result) => app.listen(8080))
-    .catch((err) => console.log(err));
-
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
+//Check if server is running
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
 
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
+//Store ratings and number of ratings in key value pairs
+var movieRatings = {
+    movie1: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie2: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie3: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie4: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie5: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie6: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie7: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie8: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie9: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie10: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie11: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie12: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie13: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie14: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie15: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie16: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie17: { rating: 0, numRatings: 1, averageRate: 0 },
+    movie18: { rating: 0, numRatings: 1, averageRate: 0 }
+};
+
+app.post('/update-rating', (req,res) => {
+
+    //Get data from JSON Body
+    const movieId = req.body.movieId;
+    const rating = req.body.rating;
+
+    //Increment the rating and number of ratings
+    movieRatings[movieId].rating += rating;
+    movieRatings[movieId].numRatings++;
+
+    //Calculate the average rating for the movie
+    movieRatings[movieId].averagerate = movieRatings[movieId].rating / movieRatings[movieId].numRatings;
 
 
-app.get('/add-charlie', (req, res) => {
-    const charlie = new charlieModel ({
-        movId: 'HTTYD', // Provide a value for movId
-        rating: 0
-    });
-    
-    charlie.save()
-        .then((result => {
-            res.send(result);
-        }))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).send('Error creating charlie');
-        });
-});
+    console.log(movieRatings[movieId].averagerate, `average rating for ${movieId}`);
+    console.log(movieRatings[movieId].rating, `total stars for ${movieId}`);
+    console.log(movieRatings[movieId].numRatings, `number of ratings for ${movieId}`);
 
-app.get('/all-charlies', (req,res) => {
-    charlie.find()
-        .then((result) => {
-            res.send(result);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+    //Send response back if successful
+    res.status(200).json({ message: 'Rating updated successfully' });
 })
+  
 
-app.get('/single-charlie', (req,res) => {
-    charlie.findById('66184c533386d83645bacec0')
-        .then((result) => {
-            res.send(result);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-})
-
-app.post('/rate-movie', (req,res) => {
-
-    //Parse the rating to anumber
-    const parsedRating = parseInt(rating);
-
-    totalRating += parsedRating;
-
-})
