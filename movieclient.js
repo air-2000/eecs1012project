@@ -1,11 +1,5 @@
 const stars = document.querySelectorAll(".stars i");
 const submitBtn = document.getElementById('submitBtn');
-var selectedStar;
-var movieId;
-
-//Define data object to send to server
-let data;
-
 
     // Loop through the "stars" NodeList
     stars.forEach((star, index1) => {
@@ -25,17 +19,11 @@ let data;
             submitBtn.addEventListener('click', () => {
 
                 //Get rating number
-                rating = star.dataset.rating
+                let rating = star.dataset.rating
 
                 //Get movie Id (numbered 1 to 18)
-                movieId = document.getElementById('ratingDisplay').dataset.movieId;
-                
-                //Input object with data to send to the server
-                data = {
-                    rating: rating,
-                    movieId: movieId
-                };
-            
+                let movieId = document.getElementById('ratingDisplay').dataset.movieId;
+             
                 console.log(movieId);
                 console.log(rating);
                 
@@ -46,7 +34,10 @@ let data;
                         'Content-Type': 'application/json'
                     },
                     //Turn into JSON String for the request body
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({
+                        rating: rating,
+                        movieId: movieId
+                    })
                 })     
                 .then((response => {
                     if(response.ok) {
@@ -72,3 +63,5 @@ let data;
             });
         });
     });
+
+

@@ -2,6 +2,9 @@ const express = require('express'); //we must have express installed!
 const app = express();
 var port = 8080; //the port we will be running our server on
 
+//Middleware for parsing JSON bodies
+app.use(express.json());
+
 //Check if server is running
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
@@ -32,8 +35,11 @@ var movieRatings = {
 app.post('/update-rating', (req,res) => {
 
     //Get data from JSON Body
-    const movieId = req.body.movieId;
-    const rating = req.body.rating;
+    const { movieId, rating } = req.body;
+
+   
+    console.log(movieId, ` Movie Id passed ${movieId}`);
+    console.log(rating, ` rating passed ${rating}`);
 
     //Increment the rating and number of ratings
     movieRatings[movieId].rating += rating;
