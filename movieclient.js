@@ -61,10 +61,25 @@ submitBtn.addEventListener('click', () => {
         //Log updated data if successful
         console.log('Rating updated successfully:', data.updatedData);
 
+        //Store the updated rating data in localStorage
+        localStorage.setItem('movieRatings', JSON.stringify(data.updatedData));
+
         //Update html page with the percentage
         document.getElementById('ratingDisplay').innerText = `Users Overall Rating : ${Math.round(data.updatedData.percentage * 100) / 100}%`;
     })
     .catch(error => {
         console.error('Error updating rating', error);
     });
+});
+
+//To make sure rating persists on page after reloading/navigating pages
+//Initialize rating data when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const storedData = localStorage.getItem('movieRatings');
+    if (storedData) {
+        const ratingData = JSON.parse(storedData);
+
+        //Use rating data to update the UI
+        document.getElementById('ratingDisplay').innerText = `Users Overall Rating : ${Math.round(ratingData.percentage * 100) / 100}%`;
+    }
 });
