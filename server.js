@@ -1,6 +1,6 @@
-const express = require('express'); //we must have express installed!
+const express = require('express'); //Install express
 const app = express();
-var port = 8080; //the port we will be running our server on
+var port = 8080; //Running server on this port
 
 //Middleware for parsing JSON bodies
 app.use(express.json());

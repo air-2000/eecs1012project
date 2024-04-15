@@ -33,12 +33,16 @@ const submitBtn = document.getElementById('submitBtn');
 
 //Add event listener for the submit button
 submitBtn.addEventListener('click', () => {
-    //Get the movie Id (numbered 1 to 18)
+
+    //Get the movie Id element (numbered 1 to 18, based on which page user is on)
     const movieIdElement = document.querySelector('[data-movie-id]');
+
     if (movieIdElement) {
+
+        //Initialize movieId to send to server, based on value of data-movie-id ex: "data-movie-id="movie1"
         const movieId = movieIdElement.dataset.movieId;
 
-        //Send data to server
+        //Send data to server (Post method)
         fetch('http://localhost:8080/update-rating', {
             method: 'POST',
             headers: {
@@ -78,8 +82,11 @@ submitBtn.addEventListener('click', () => {
 
 //Initialize rating data when page loads
 document.addEventListener('DOMContentLoaded', () => {
+
+    //Get the movie Id element (numbered 1 to 18, based on which page user is on)
     const movieIdElement = document.querySelector('[data-movie-id]');
     if (movieIdElement) {
+        //Initialize movieId
         const movieId = movieIdElement.dataset.movieId;
 
         //Retrieve rating data for the corresponding movie from localStorage
@@ -87,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (storedData) {
             const ratingData = JSON.parse(storedData);
 
-            //Update UI with the rating data (storage for reloading not seen by user (thats why line is duplicated)
+            //Update UI with the rating data (Stores information for the user to see after reloading the page, thats why the line is duplicated)
             movieIdElement.innerText = `Users Overall Rating : ${Math.round(ratingData.percentage * 100) / 100}%`;
         }
     }
