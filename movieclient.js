@@ -62,7 +62,7 @@ submitBtn.addEventListener('click', () => {
         console.log('Rating updated successfully:', data.updatedData);
 
         //Update html page with the percentage
-        document.getElementById('ratingDisplay').innerText = `Percentage: ${data.updatedData.percentage}%`;
+        document.getElementById('ratingDisplay').innerText = `Users Overall Rating : ${Math.round(data.updatedData.percentage * 100) / 100}%`;
     })
     .catch(error => {
         console.error('Error updating rating', error);
