@@ -58,8 +58,15 @@ app.post('/update-rating', (req,res) => {
     console.log(movieRatings[movieId].numRatings, `number of ratings for ${movieId}`);
     console.log(movieRatings[movieId].percentage, `percentage for ${movieId}`);
 
+    //Create updatedData with the updated information
+    const updatedData = {
+        rating: movieRatings[movieId].rating,
+        numRatings: movieRatings[movieId].numRatings,
+        averageRate: movieRatings[movieId].averageRate,
+        percentage: movieRatings[movieId].percentage
+    };
+
     //Send response back if successful
-    res.status(200).json({ message: 'Rating updated successfully' });
+    res.status(200).json({ message: 'Rating updated successfully', updatedData});
 })
   
-

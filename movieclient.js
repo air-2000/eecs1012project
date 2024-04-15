@@ -52,11 +52,19 @@ submitBtn.addEventListener('click', () => {
     .then((response) => {
         if (response.ok) {
             console.log('Rating sent');
+                return response.json();
         } else {
-            console.log('Failed to send rating');
+            console.log('Failed to update rating');
         }
     })
+    .then(data => {
+        //Log updated data if successful
+        console.log('Rating updated successfully:', data.updatedData);
+
+        //Update html page with the percentage
+        document.getElementById('ratingDisplay').innerText = `Percentage: ${data.updatedData.percentage}%`;
+    })
     .catch(error => {
-        console.error('Error sending rating', error);
+        console.error('Error updating rating', error);
     });
 });
