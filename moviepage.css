@@ -13,7 +13,7 @@
 
 .rating-box header {
   font-size: 22px;
-  color: #ffffff;
+  color: black;
   font-weight: 500;
   margin-bottom: 40px;
   text-align: center;
@@ -84,8 +84,7 @@
 
 body {
     height: 100vh;
-    background-image: radial-gradient(circle at top center, rgb(235, 235, 235) 0%, rgb(235, 235, 235) 10%,rgb(229, 229, 229) 10%, rgb(229, 229, 229) 19%,rgb(222, 222, 222) 19%, rgb(222, 222, 222) 22%,rgb(216, 216, 216) 22%, rgb(216, 216, 216) 24%,rgb(209, 209, 209) 24%, rgb(209, 209, 209) 63%,rgb(203, 203, 203) 63%, rgb(203, 203, 203) 75%,rgb(196, 196, 196) 75%, rgb(196, 196, 196) 100%);
-  }
+    background: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);  }
 
 .logo{
 
@@ -181,14 +180,17 @@ iframe {
 }
 
 .summary{
-    margin-top: 25px;
-    margin-left: 75px;
+    margin-top: 10%;
+    margin-left: 1%;
+   
 }
 
 .rating{
     position: absolute;
     bottom: 35px;
-    left: 600px;
+    left: 30%;
+    font-size: 30px;
+    font-family:'Times New Roman', Times, serif;
 }
 
 

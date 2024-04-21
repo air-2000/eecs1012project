@@ -9,10 +9,12 @@
         <script src="movieclient.js" defer></script>
     </head>
     <body>
+        <!-- Home button-->
         <button type="submit">
             <img class="logo" src="images/faviconcharlie.png" onclick="location.href='index.html'">
         </button>
 
+     <!--Hamburger menu-->
     <div class="menu">
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <div class="menu-options">
@@ -58,17 +60,21 @@
                 </div>
                 <div class="rating-box">
                     <header>What Did You Think of the Movie?</header>
+                    <!--Rating stars with assigned data ratings for the server-->
                     <div class="stars">
                         <form>
+                            <!--Each star has its assigned data-rating-->
                             <i class="fa-solid fa-star" data-rating="1"></i>
                             <i class="fa-solid fa-star" data-rating="2"></i>
                             <i class="fa-solid fa-star" data-rating="3"></i>
                             <i class="fa-solid fa-star" data-rating="4"></i>
                             <i class="fa-solid fa-star" data-rating="5"></i>
+                            <!--Button to send data rating-->
                             <button id="submitBtn" type="button">Submit</button>
                         </form>
                     </div>
                 </div>
+                <!--Movie Id and rating display here-->
                 <div><p class="rating" data-movie-id="movie12" id="ratingDisplaymovie12"></p></div>
 
             </div>
