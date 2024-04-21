@@ -55,7 +55,7 @@ body{
 }
 
 .navbutton.rightbutton{
-    float:right;
+    float: right;
 }
 
 .genres {
@@ -168,10 +168,9 @@ a:hover{
     position: relative;
     margin: 10px;
     padding: 10px;
-    width: 50%;
-    height: 50%;
+    min-width: 147px;
+    min-height: 147px;
     inset:0;
-    opacity:0.5;
 }
 
 .poster:hover{
@@ -181,8 +180,12 @@ a:hover{
 }
 
 .posters{
-    display:inline-flex;
+    display:flex;
     position: relative;
+    overflow: hidden;
+    height: 250px;
+    width: auto;
+    white-space: nowrap;
 }
 
 .posterflex{
@@ -190,9 +193,4 @@ a:hover{
     margin:2%;
     justify-content: center;
     
-}
-
-.poster.activeposter{
-    opacity: 1;
-    transform: scale(1.15);
 }
