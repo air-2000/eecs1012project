@@ -239,7 +239,7 @@ iframe{
     height: 550px; /* Adjust the height as needed */
     width: 1000px;
     position: absolute;
-    top: 10px; /* Adjust the top position as needed */
+    top: 46px; /* Adjust the top position as needed */
     left: 400px;
 }
 #video-container iframe {

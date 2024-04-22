@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
 function showSlide(index){
     if(index >= slides.length){
         SlideIndex = 0;
