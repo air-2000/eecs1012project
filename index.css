@@ -80,27 +80,25 @@ body{
 }
 
 
-.logo{
 
-    width: 90px;
-    height: 90px;
-    transition: width 1s, height 1s;
-}
-
-.logo:hover{
-   
-    width: 110px;
-    height: 110px;
-
-}
-
-.logo-btn {
+.logo {
     position: absolute;
     top: 10px;
     left: 10px;
     background: none;
     border: none;
     cursor: pointer;
+    width: 90px;
+    height: 90px;
+    transition: width 1s, height 1s;
+}
+
+
+.logo:hover{
+   
+    width: 110px;
+    height: 110px;
+
 }
 
 .menu {

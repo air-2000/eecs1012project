@@ -7,16 +7,25 @@
 
 .rating-box {
     position: absolute;
-    bottom: 20px;
-    right: 35px;
+    bottom: 1%;
+    right: 60%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 
 .rating-box header {
   font-size: 22px;
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: 500;
-  margin-bottom: 40px;
+  margin-bottom: 2%;
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 .rating-box .stars {
   display: flex;
@@ -30,21 +39,19 @@
   transition: color 0.2s ease;
 }
 .stars i.active {
-  color: #ff9c1a;
+  color: #000000;
 }
 
-.box {
-    display: flex;
-  }
+
   
 .poster {
-    width: 300px; 
+    width: 300px;
     height: 550px; 
-    margin: 10px; 
-    margin:right;
-    margin-top: 5%;
-    margin-right: 120px;
-  }
+    margin-right: 80%;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 
 .centerbox {
     text-align: center;
@@ -77,43 +84,36 @@
     bottom: 10px;;
 }
 
-.poster img {
-    border: 5px solid #383838;
-    transition: width 1s, height 1s;
-}
-
 body {
     height: 100vh;
     background: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);  }
 
-.logo{
-
-    width: 90px;
-    height: 90px;
-    transition: width 1s, height 1s;
-}
-
-.logo:hover{
-   
-    width: 110px;
-    height: 110px;
-
-}
-
-.poster img:hover{
-    width: 320px; 
-    height: 570px; 
-}
 
 
-.logo-btn {
+
+.logo {
     position: absolute;
     top: 10px;
     left: 10px;
     background: none;
     border: none;
     cursor: pointer;
+    width: 90px;
+    height: 90px;
+    transition: width 1s, height 1s;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+
+.logo:hover{
+    
+    width: 110px;
+    height: 110px;
+
+}
+    
+
 
 .menu {
     position: absolute;
@@ -177,20 +177,72 @@ a:hover{
 
 iframe {
     margin-top: 95px;
+    margin-left: 100px;
+    height: 300px;
 }
 
-.summary{
-    margin-top: 10%;
-    margin-left: 1%;
-   
+.summary {
+    margin-bottom: 120%;
+    margin-left: 41%;
+    margin-right: 5%;
+    border-radius: 10px; 
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 950px;
+    height: 250px;
 }
+
+.summary p {
+    padding: 20px; /* Adjust padding as needed */
+}
+
 
 .rating{
     position: absolute;
-    bottom: 35px;
-    left: 30%;
+    bottom: 12%;
+    left: 10%;
     font-size: 30px;
     font-family:'Times New Roman', Times, serif;
 }
 
+/* from https://getcssscan.com/css-buttons-examples*/
+#submitBtn {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin-right: 2%;
+  margin-top: 3%;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
+iframe{
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#video-container {
+    height: 550px; /* Adjust the height as needed */
+    width: 1000px;
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    left: 400px;
+}
+#video-container iframe {
+    width: 100%; /* Ensure the iframe fills its container */
+    height: 100%; /* Ensure the iframe fills its container */
+}
