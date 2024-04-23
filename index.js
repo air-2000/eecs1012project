@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     slides = document.querySelectorAll(".posters img");
     activeSlide = slides[1];
 
+    //Hamburger menu
     menuIcon.addEventListener('click', function() {
         menuOptions.classList.toggle('active');
     });

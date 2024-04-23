@@ -98,4 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
             movieIdElement.innerText = `Users Overall Rating : ${Math.round(ratingData.percentage * 100) / 100}%`;
         }
     }
+
+    //Hamburger menu
+    var menuIcon = document.querySelector('.menu-icon');
+    var menuOptions = document.querySelector('.menu-options');
+
+    menuIcon.addEventListener('click', function() {
+        menuOptions.classList.toggle('active');
+    });
+
 });
+
+
+
+
+
