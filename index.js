@@ -1,46 +1,36 @@
-
-var slides = document.querySelectorAll(".posters img");
-var activeSlide = slides[1];
-let SlideIndex = 1;
+var scrollAmount = 0;
+var scrollperClick;
 
 document.addEventListener('DOMContentLoaded', function() {
     var menuIcon = document.querySelector('.menu-icon');
     var menuOptions = document.querySelector('.menu-options');
-
-    slides = document.querySelectorAll(".posters img");
-    activeSlide = slides[1];
 
     //Hamburger menu
     menuIcon.addEventListener('click', function() {
         menuOptions.classList.toggle('active');
     });
 });
-
-
-function showSlide(index){
-    if(index >= slides.length){
-        SlideIndex = 0;
-    }
-
-    else if(index < 0){
-        SlideIndex = slides.length - 1;
-    }
-
-    slides.forEach(slide => {
-        slide.classList.remove("activeposter");
-    });
-
-    slides[SlideIndex].classList.add("activeposter");
-}
+//failed attempt at making navigation buttons for the carousel
+let slides = document.querySelector(".posters");
 
 function rightbutton() {
-    SlideIndex++;
-    showSlide(SlideIndex);
-    console.log(SlideIndex);
+    if (scrollAmount <= slides.scrollWidth - slides.clientWidth){
+        slides.scrollTo({
+            top:0,
+            left:(scrollAmount += scrollperClick),
+            behavior:"smooth"
+        })
+    }
 }
 
 function leftbutton() {
-    SlideIndex--;
-    showSlide(SlideIndex);
-    console.log(SlideIndex);
+    slides.scrollTo({
+        top:0,
+        left:(scrollAmount -= scrollperClick),
+        behavior:"smooth"
+    })
+
+    if(scrollAmount < 0){
+        scrollAmount = 0;
+    }
 }

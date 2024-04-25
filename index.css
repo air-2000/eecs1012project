@@ -17,46 +17,6 @@ body{
     margin-top: 0;
 }
 
-.navbutton{
-    position:absolute;
-    background: none;
-    top: 25%;
-    bottom: 25%;
-    z-index: 2;
-}
-
-.navbutton button{
-    background-color: rgba(0, 0, 0, 0);
-    border: 0;
-    border-radius: 20%;
-    text-align: center;
-    margin: 5px;
-    padding: 5px;
-    align-items:center;
-    
-}
-
-.navbutton button:hover{
-    background-color: rgba(255, 255, 255, 0.305);
-    color:blue;
-    transition: .2s;
-    transform: scale(1.10);
-}
-
-.navbutton button:active{
-    background-color: lightblue;
-    border: 1px solid blue;
-    color:blue;
-    transform: scale(1);
-}
-.navbutton.leftbutton{
-    float:left;
-}
-
-.navbutton.rightbutton{
-    float: right;
-}
-
 .genres {
     text-align: center; 
 }
@@ -78,8 +38,6 @@ body{
     text-decoration: none; 
     color: #000; 
 }
-
-
 
 .logo {
     position: absolute;
@@ -165,8 +123,8 @@ a:hover{
     position: relative;
     margin: 10px;
     padding: 10px;
-    min-width: 147px;
-    min-height: 147px;
+    max-width: 147px;
+    max-height: 147px;
     inset:0;
 }
 
@@ -179,7 +137,7 @@ a:hover{
 .posters{
     display:flex;
     position: relative;
-    overflow: hidden;
+    overflow-y:scroll;
     height: 250px;
     width: auto;
     white-space: nowrap;
@@ -203,4 +161,45 @@ a:hover{
 #about {
     margin-top: 10%;
     text-align: center;
+}
+.navbutton{
+    position:absolute;
+    background: none;
+    top: 25%;
+    bottom: 25%;
+    z-index: 2;
+}
+
+.navbutton button{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    border-radius: 20%;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    align-items:center;
+    
+}
+
+.navbutton button:hover{
+    background-color: rgba(255, 255, 255, 0.305);
+    color:blue;
+    transition: .2s;
+    transform: scale(1.10);
+}
+
+.navbutton button:active{
+    background-color: lightblue;
+    border: 1px solid blue;
+    color:blue;
+    transform: scale(1);
+}
+.navbutton.leftbutton{
+    position:absolute;
+    float:left;
+}
+
+.navbutton.rightbutton{
+    position:absolute;
+    float: right;
 }
